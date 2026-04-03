@@ -1,14 +1,9 @@
-you give seperate seperate copy 
-
-i want to copy 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fingerprint on Ubuntu - Dhilip</title>
-
-
 
 <style>
 body {
@@ -81,7 +76,6 @@ a:hover {
 </style>
 </head>
 
-
 <body>
 
 <div class="container">
@@ -144,7 +138,7 @@ Ubuntu hadn’t merged it yet — so I built the driver myself 💪
 
 <h2>💻 Fingerprint Authentication on Ubuntu 24.04</h2>
 
-![Ubuntu](/assets/images/ubuntu.jpg)
+<img src="/assets/images/ubuntu.jpg" alt="Ubuntu">
 
 <div class="card">
 <p>
@@ -230,7 +224,7 @@ sudo systemctl restart fprintd.service
 fprintd-enroll $USER
 </pre>
 
-![Login](/assets/images/login.png)
+<img src="/assets/images/login.png">
 
 ---
 
@@ -240,8 +234,8 @@ fprintd-enroll $USER
 sudo pam-auth-update
 </pre>
 
-![Sudo User](/assets/images/sudo_user.png)
-![Sudo](/assets/images/sudo.png)
+<img src="/assets/images/sudo_user.png">
+<img src="/assets/images/sudo.png">
 
 ---
 
@@ -280,4 +274,4 @@ After 3 years… it finally worked.
 </div>
 
 </body>
-</html> 
+</html>
