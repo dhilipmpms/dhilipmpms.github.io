@@ -20,7 +20,7 @@ Even without hope, I read everything.
 
 Then I discovered:
 
-04f3:0c00 ELAN Fingerprint (Unsupported)
+``` 04f3:0c00 ELAN Fingerprint (Unsupported) ```
 
 
 But then... I saw a pull request adding support for many devices — including mine 👀
@@ -51,41 +51,45 @@ So we need to build a patched version of `libfprint`.
 
 ### 1. Install Dependencies
 
-sudo apt-get install meson glib-2.0 libgusb-dev libgirepository1.0-dev libcairo-dev libpixman-1-dev cmake libnss3-dev libgudev-1.0-dev gtk-doc-tools gdb valgrind git openssl libssl-dev
+``` sudo apt-get install meson glib-2.0 libgusb-dev libgirepository1.0-dev libcairo-dev libpixman-1-dev cmake libnss3-dev libgudev-1.0-dev gtk-doc-tools gdb valgrind git openssl libssl-dev ```
 
 
 ### 2. Clone Repository
 
-git clone https://gitlab.freedesktop.org/depau/libfprint.git
+``` git clone https://gitlab.freedesktop.org/depau/libfprint.git ```
 
-cd libfprint
+``` cd libfprint ```
 
 ### 3. Switch Branch
+
+``` git switch elanmoc2 ``` 
+
+```git fetch && git pull ```
 
 
 ### 4. Build & Install
 
-meson setup builddir && cd builddir
+``` meson setup builddir && cd builddir ```
 
-meson compile
+``` meson compile ```
 
-meson test
+```meson test```
 
-sudo meson install
+```sudo meson install ```
 
 ### 5. Fix Library Path
 
-echo '/usr/local/lib/' | sudo tee /etc/ld.so.conf.d/local.conf
+```echo '/usr/local/lib/' | sudo tee /etc/ld.so.conf.d/local.conf```
 
-sudo ldconfig
+```sudo ldconfig```
 
 ### 6. Restart Service
 
-sudo systemctl restart fprintd.service
+```sudo systemctl restart fprintd.service```
 
 ### 7. Enroll Fingerprint
 
-fprintd-enroll $USER
+```fprintd-enroll $USER```
 
 
 ![Login](/assets/images/login.png)
@@ -93,8 +97,8 @@ fprintd-enroll $USER
 ### 8. Enable for sudo
 
 
-![Sudo User](/assets/images/sudo_user.png)
-![Sudo](/assets/images/sudo.png)
+```![Sudo User](/assets/images/sudo_user.png)```
+```![Sudo](/assets/images/sudo.png)```
 
 ---
 
