@@ -40,9 +40,9 @@ Even without hope, I read everything.
 
 Then I discovered:
 
-```
+
 04f3:0c00 ELAN Fingerprint (Unsupported)
-```
+
 
 But then… I saw a pull request adding support for many devices — including mine 👀
 
@@ -87,12 +87,12 @@ Ubuntu hadn't merged it yet — so I built the driver myself 💪
   <div class="step-content">
     <h3>Install Dependencies</h3>
 
-```bash
+bash
 sudo apt-get install meson glib-2.0 libgusb-dev \
   libgirepository1.0-dev libcairo-dev libpixman-1-dev \
   cmake libnss3-dev libgudev-1.0-dev gtk-doc-tools \
   gdb valgrind git openssl libssl-dev
-```
+
 
   </div>
 </div>
@@ -102,10 +102,10 @@ sudo apt-get install meson glib-2.0 libgusb-dev \
   <div class="step-content">
     <h3>Clone Repository</h3>
 
-```bash
+bash
 git clone https://gitlab.freedesktop.org/depau/libfprint.git
 cd libfprint
-```
+
 
   </div>
 </div>
@@ -115,10 +115,10 @@ cd libfprint
   <div class="step-content">
     <h3>Switch Branch</h3>
 
-```bash
+bash
 git switch elanmoc2
 git fetch && git pull
-```
+
 
   </div>
 </div>
@@ -128,12 +128,12 @@ git fetch && git pull
   <div class="step-content">
     <h3>Build & Install</h3>
 
-```bash
+bash
 meson setup builddir && cd builddir
 meson compile
 meson test
 sudo meson install
-```
+
 
   </div>
 </div>
@@ -143,10 +143,10 @@ sudo meson install
   <div class="step-content">
     <h3>Fix Library Path</h3>
 
-```bash
+bash
 echo '/usr/local/lib/' | sudo tee /etc/ld.so.conf.d/local.conf
 sudo ldconfig
-```
+
 
   </div>
 </div>
@@ -156,9 +156,9 @@ sudo ldconfig
   <div class="step-content">
     <h3>Restart Service</h3>
 
-```bash
+bash
 sudo systemctl restart fprintd.service
-```
+
 
   </div>
 </div>
@@ -168,9 +168,9 @@ sudo systemctl restart fprintd.service
   <div class="step-content">
     <h3>Enroll Fingerprint</h3>
 
-```bash
+bash
 fprintd-enroll $USER
-```
+
 
 <img src="/assets/images/login.png" alt="Fingerprint Login" class="blog-img" loading="lazy">
 
@@ -182,9 +182,9 @@ fprintd-enroll $USER
   <div class="step-content">
     <h3>Enable for sudo</h3>
 
-```bash
+bash
 sudo pam-auth-update
-```
+
 
 <div class="img-row">
   <img src="/assets/images/sudo_user.png" alt="Sudo User Config" class="blog-img" loading="lazy">
