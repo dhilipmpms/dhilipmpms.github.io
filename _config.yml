@@ -1,0 +1,11 @@
+title: Dhilip's Blog
+description: My journey in Linux, FOSS, and Django
+baseurl: ""
+url: "https://dhilipmpms.github.io"
+
+theme: minima
+
+author:
+  name: Dhilip
+
+markdown: kramdown
