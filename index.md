@@ -3,23 +3,24 @@ layout: default
 title: Home
 ---
 
-# Home
+<div class="container">
 
-Welcome to my blog 🚀  
-I write about Linux, FOSS, and Django.
+# Welcome 🚀
+
+I write about **Linux**, **FOSS**, and **Django**.
 
 ---
 
 ## 📝 Latest Posts
 
-{% raw %}
 {% for post in site.posts %}
-### [{{ post.title }}]({{ post.url }})
-
-📅 {{ post.date | date: "%B %d, %Y" }}
-
-{{ post.excerpt }}
-
----
+<a href="{{ post.url }}" class="resource-link" style="margin-bottom: 16px;">
+  <span class="link-icon">📄</span>
+  <span>
+    <strong>{{ post.title }}</strong><br>
+    <small style="color: var(--text-muted);">📅 {{ post.date | date: "%B %d, %Y" }}</small>
+  </span>
+</a>
 {% endfor %}
-{% endraw %}
+
+</div>
